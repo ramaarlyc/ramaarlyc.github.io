@@ -736,6 +736,9 @@
                                 Platform pengelolaan operasional keuangan dan pencatatan transaksi terintegrasi dengan akses multi-peran pengguna dan reporting otomatis.
                             </p>
                             <div id="workTags" class="flex flex-wrap items-center justify-center gap-1.5"></div>
+                            <a id="workLink" href="https://ramaarlyc.github.io/pencatatan-keuangan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 mt-3 text-xs font-mono text-slate-300 hover:text-white transition-colors" aria-label="Buka project Pencatatan Keuangan">
+                                Buka project <span aria-hidden="true">↗</span>
+                            </a>
                         </div>
                     </div>
 
@@ -1332,7 +1335,8 @@
                 title: "Financial.app",
                 badge: "Web Application / System",
                 desc: "Platform pengelolaan operasional keuangan dan pencatatan transaksi terintegrasi dengan akses multi-peran pengguna dan reporting otomatis.",
-                tags: ["React", "Node.js", "Tailwind CSS", "PostgreSQL"]
+                tags: ["HTML", "JavaScript", "Local Storage", "Data Visualization"],
+                url: "https://ramaarlyc.github.io/pencatatan-keuangan/"
             },
             {
                 title: "Digital Marketing Analytics",
@@ -1354,6 +1358,7 @@
         const workTitle = document.getElementById('workTitle');
         const workDesc = document.getElementById('workDesc');
         const workTags = document.getElementById('workTags');
+        const workLink = document.getElementById('workLink');
         const workInfoContainer = document.getElementById('workInfoContainer');
         const totalWorks = workCards.length;
 
@@ -1445,6 +1450,10 @@
                     workBadge.textContent = data.badge;
                     workTitle.textContent = data.title;
                     workDesc.textContent = data.desc;
+                    if (workLink) {
+                        workLink.href = data.url || '#';
+                        workLink.hidden = !data.url;
+                    }
 
                     const isLight = document.documentElement.classList.contains('light');
                     const badgeClass = isLight 
